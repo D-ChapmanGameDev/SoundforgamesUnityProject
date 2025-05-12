@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
     public FMODUnity.StudioEventEmitter FMODTimeEvent;
     public GameManager gmanager;
     public string periodOfTheDay;
-
+    public float TwentyFourHourTime;
     public float RawTime;
 
     // Start is called before the first frame update
@@ -18,11 +18,10 @@ public class TimeManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
     {
-
-
-
+        TwentyFourHourTime = (RawTime / 1440f) * 24f;
+        FMODTimeEvent.SetParameter("Time", TwentyFourHourTime);
     }
 
     public void updateTimePeriod(int periodIndex) 
