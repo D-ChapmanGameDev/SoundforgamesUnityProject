@@ -167,10 +167,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638137007363173396
+  lastModified: 638831019327970992
   FileSizes:
   - Name: Desktop
-    Value: 31028
+    Value: 89632
   Exists: 1
 --- !u!114 &-7218288516651920230
 MonoBehaviour:
@@ -187,10 +187,34 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638137007361909486
+  lastModified: 638831019327251370
   FileSizes:
   - Name: Desktop
-    Value: 4238
+    Value: 4234
+  Exists: 1
+--- !u!114 &-6309243526390243449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/TimeOfDay/Time
+  m_EditorClassIdentifier: 
+  Name: Time
+  StudioPath: 
+  Min: 0
+  Max: 24
+  Default: 0
+  ID:
+    data1: 2090982748
+    data2: 13452679
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-6140372252881690269
 MonoBehaviour:
@@ -530,7 +554,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8960757795526132968}
+  - {fileID: -6309243526390243449}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -726,7 +750,7 @@ MonoBehaviour:
   - {fileID: 4450031680838293598}
   StringsBanks:
   - {fileID: -7218288516651920230}
-  cacheTime: 638137007363173396
+  cacheTime: 638831019327970992
   cacheVersion: 10
 --- !u!114 &525602267344705921
 MonoBehaviour:
@@ -936,7 +960,7 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638137007362142421
+  lastModified: 638831019327301933
   FileSizes:
   - Name: Desktop
     Value: 1416
@@ -1090,10 +1114,10 @@ MonoBehaviour:
   Path: FMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638137007361871272
+  lastModified: 638831019327185248
   FileSizes:
   - Name: Desktop
-    Value: 9370
+    Value: 68032
   Exists: 1
 --- !u!114 &4490606575963264758
 MonoBehaviour:
@@ -1533,34 +1557,6 @@ MonoBehaviour:
   - CloseMenu
   - SeedPickUp
   - CompendiumUpdated
-  Exists: 1
---- !u!114 &8960757795526132968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/TimeOfDay/TimeOfDay
-  m_EditorClassIdentifier: 
-  Name: TimeOfDay
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 383380800
-    data2: 3819101840
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Night
-  - Morning
-  - Afternoon
-  - Evening
   Exists: 1
 --- !u!114 &9156533317607298825
 MonoBehaviour:
