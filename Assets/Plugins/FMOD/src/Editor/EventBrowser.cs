@@ -9,38 +9,40 @@ using System.IO;
 
 namespace FMODUnity
 {
-    class EventBrowser : EditorWindow, ISerializationCallbackReceiver
+    public class EventBrowser : EditorWindow, ISerializationCallbackReceiver
     {
         [SerializeField]
         private bool isStandaloneWindow;
 
         [NonSerialized]
-        float nextRepaintTime;
+        private float nextRepaintTime;
 
         [NonSerialized]
-        float[] cachedMetering;
+        private float[] cachedMetering;
 
-        const float RepaintInterval = 1 / 30.0f;
+        private const float RepaintInterval = 1 / 30.0f;
 
         private Texture2D borderIcon;
         private GUIStyle borderStyle;
 
         [NonSerialized]
-        TreeView treeView;
+        private TreeView treeView;
 
         [NonSerialized]
-        SearchField searchField;
+        private SearchField searchField;
 
         [SerializeField]
-        PreviewArea previewArea = new PreviewArea();
+        private PreviewArea previewArea = new PreviewArea();
 
         [SerializeField]
-        TreeView.State treeViewState;
+        private TreeView.State treeViewState;
 
         [NonSerialized]
-        DateTime LastKnownCacheTime;
+        private DateTime LastKnownCacheTime;
 
         private SerializedProperty outputProperty;
+
+        public static FMOD.Studio.EventInstance PreviewEventInstance { get; private set; }
 
         [MenuItem("FMOD/Event Browser", priority = 2)]
         public static void ShowWindow()
@@ -67,7 +69,7 @@ namespace FMODUnity
         {
         }
 
-        void Update()
+        private void Update()
         {
             bool forceRepaint = false;
 
@@ -83,7 +85,7 @@ namespace FMODUnity
                 ReadEventCache();
                 forceRepaint = true;
             }
-            
+
             if (forceRepaint || (previewArea != null && previewArea.forceRepaint && nextRepaintTime < Time.realtimeSinceStartup))
             {
                 Repaint();
@@ -91,13 +93,13 @@ namespace FMODUnity
             }
         }
 
-        void ReadEventCache()
+        private void ReadEventCache()
         {
             LastKnownCacheTime = EventManager.CacheTime;
             treeView.Reload();
         }
 
-        class TreeView : UnityEditor.IMGUI.Controls.TreeView
+        private class TreeView : UnityEditor.IMGUI.Controls.TreeView
         {
             private static readonly Texture2D folderOpenIcon = EditorUtils.LoadImage("FolderIconOpen.png");
             private static readonly Texture2D folderClosedIcon = EditorUtils.LoadImage("FolderIconClosed.png");
@@ -174,7 +176,7 @@ namespace FMODUnity
                 public ScriptableObject Data;
             }
 
-            class FolderItem : TreeViewItem
+            private class FolderItem : TreeViewItem
             {
                 public FolderItem(int id, int depth, string displayName)
                     : base(id, depth, displayName)
@@ -258,21 +260,21 @@ namespace FMODUnity
 
                 if ((TypeFilter & TypeFilter.Event) != 0)
                 {
-                    CreateSubTree("Events", EventPrefix,
+                    CreateSubTree(L10n.Tr("Events"), EventPrefix,
                         EventManager.Events.Where(e => e.Path.StartsWith(EventPrefix)), e => e.Path);
 
-                    CreateSubTree("Snapshots", SnapshotPrefix,
+                    CreateSubTree(L10n.Tr("Snapshots"), SnapshotPrefix,
                         EventManager.Events.Where(e => e.Path.StartsWith(SnapshotPrefix)), s => s.Path);
                 }
 
                 if ((TypeFilter & TypeFilter.Bank) != 0)
                 {
-                    CreateSubTree("Banks", BankPrefix, EventManager.Banks, b => b.StudioPath);
+                    CreateSubTree(L10n.Tr("Banks"), BankPrefix, EventManager.Banks, b => b.StudioPath);
                 }
 
                 if ((TypeFilter & TypeFilter.Parameter) != 0)
                 {
-                    CreateSubTree("Global Parameters", ParameterPrefix,
+                    CreateSubTree(L10n.Tr("Global Parameters"), ParameterPrefix,
                         EventManager.Parameters, p => p.StudioPath);
                 }
 
@@ -487,15 +489,15 @@ namespace FMODUnity
 
                     if (item.Data is EditorEventRef)
                     {
-                        title = "New FMOD Studio Emitter";
+                        title = L10n.Tr("New FMOD Studio Emitter");
                     }
                     else if (item.Data is EditorBankRef)
                     {
-                        title = "New FMOD Studio Bank Loader";
+                        title = L10n.Tr("New FMOD Studio Bank Loader");
                     }
                     else if (item.Data is EditorParamRef)
                     {
-                        title = "New FMOD Studio Global Parameter Trigger";
+                        title = L10n.Tr("New FMOD Studio Global Parameter Trigger");
                     }
 
                     DragAndDrop.StartDrag(title);
@@ -655,10 +657,15 @@ namespace FMODUnity
             }
         }
 
-        bool InChooserMode { get { return outputProperty != null; } }
+        private bool InChooserMode { get { return outputProperty != null; } }
 
-        void OnGUI()
+        private void OnGUI()
         {
+            if (!IsOpen)
+            {
+                return;
+            }
+
             AffirmResources();
 
             if (InChooserMode)
@@ -682,11 +689,11 @@ namespace FMODUnity
             else
             {
                 previewArea.treeView = treeView;
-                previewArea.OnGUI(cachedMetering != null ? cachedMetering : EditorUtils.GetMetering());
+                previewArea.OnGUI(position.width, cachedMetering != null ? cachedMetering : EditorUtils.GetMetering());
             }
         }
 
-        void HandleChooserModeEvents()
+        private void HandleChooserModeEvents()
         {
             if (Event.current.isKey)
             {
@@ -734,7 +741,7 @@ namespace FMODUnity
         }
 
         [Serializable]
-        class PreviewArea
+        private class PreviewArea
         {
             [NonSerialized]
             public TreeView treeView;
@@ -743,19 +750,19 @@ namespace FMODUnity
             private EditorEventRef currentEvent;
 
             [SerializeField]
-            DetailsView detailsView = new DetailsView();
+            private DetailsView detailsView = new DetailsView();
 
             [SerializeField]
-            TransportControls transportControls = new TransportControls();
+            private TransportControls transportControls = new TransportControls();
 
             [SerializeField]
-            Event3DPreview event3DPreview = new Event3DPreview();
+            private Event3DPreview event3DPreview = new Event3DPreview();
 
             [SerializeField]
-            PreviewMeters meters = new PreviewMeters();
+            private PreviewMeters meters = new PreviewMeters();
 
             [SerializeField]
-            EventParameterControls parameterControls = new EventParameterControls();
+            private EventParameterControls parameterControls = new EventParameterControls();
 
             private GUIStyle mainStyle;
 
@@ -763,13 +770,13 @@ namespace FMODUnity
 
             public bool forceRepaint { get { return transportControls.forceRepaint; } }
 
-            void SetEvent(EditorEventRef eventRef)
+            private void SetEvent(EditorEventRef eventRef)
             {
                 if (eventRef != currentEvent)
                 {
                     currentEvent = eventRef;
 
-                    EditorUtils.PreviewStop();
+                    EditorUtils.PreviewStop(PreviewEventInstance);
                     transportControls.Reset();
                     event3DPreview.Reset();
                     parameterControls.Reset();
@@ -785,8 +792,10 @@ namespace FMODUnity
                 }
             }
 
-            public void OnGUI(float[] metering)
+            public void OnGUI(float width, float[] metering)
             {
+                isNarrow = width < 600;
+
                 AffirmResources();
 
                 ScriptableObject selectedObject = treeView.SelectedObject;
@@ -827,12 +836,6 @@ namespace FMODUnity
                     }
 
                     GUILayout.EndVertical();
-
-                    if (Event.current.type == EventType.Repaint)
-                    {
-                        Rect rect = GUILayoutUtility.GetLastRect();
-                        isNarrow = rect.width < 600;
-                    }
                 }
             }
 
@@ -889,7 +892,7 @@ namespace FMODUnity
         }
 
         [Serializable]
-        class DetailsView
+        private class DetailsView
         {
             private Texture copyIcon;
             private GUIStyle textFieldNameStyle;
@@ -909,38 +912,38 @@ namespace FMODUnity
             {
                 AffirmResources();
 
-                DrawCopyableTextField("Full Path", selectedEvent.Path);
+                DrawCopyableTextField(L10n.Tr("Full Path"), selectedEvent.Path);
 
-                DrawTextField("Banks", string.Join(", ", selectedEvent.Banks.Select(x => x.Name).ToArray()));
+                DrawTextField(L10n.Tr("Banks"), string.Join(", ", selectedEvent.Banks.Select(x => x.Name).ToArray()));
 
                 EditorGUILayout.BeginHorizontal();
-                DrawTextField("Panning", selectedEvent.Is3D ? "3D" : "2D");
-                DrawTextField("Oneshot", selectedEvent.IsOneShot.ToString());
+                DrawTextField(L10n.Tr("Panning"), selectedEvent.Is3D ? "3D" : "2D");
+                DrawTextField(L10n.Tr("Oneshot"), selectedEvent.IsOneShot.ToString());
 
                 TimeSpan t = TimeSpan.FromMilliseconds(selectedEvent.Length);
-                DrawTextField("Length", selectedEvent.Length > 0 ? string.Format("{0:D2}:{1:D2}:{2:D3}", t.Minutes, t.Seconds, t.Milliseconds) : "N/A");
+                DrawTextField(L10n.Tr("Length"), selectedEvent.Length > 0 ? string.Format("{0:D2}:{1:D2}:{2:D3}", t.Minutes, t.Seconds, t.Milliseconds) : "N/A");
 
-                if (!isNarrow) DrawTextField("Streaming", selectedEvent.IsStream.ToString());
+                if (!isNarrow) DrawTextField(L10n.Tr("Streaming"), selectedEvent.IsStream.ToString());
                 EditorGUILayout.EndHorizontal();
-                if (isNarrow) DrawTextField("Streaming", selectedEvent.IsStream.ToString());
+                if (isNarrow) DrawTextField(L10n.Tr("Streaming"), selectedEvent.IsStream.ToString());
             }
 
             public void DrawSnapshot(EditorEventRef eventRef)
             {
                 AffirmResources();
 
-                DrawCopyableTextField("Full Path", eventRef.Path);
+                DrawCopyableTextField(L10n.Tr("Full Path"), eventRef.Path);
             }
 
             public void DrawBank(EditorBankRef bank)
             {
                 AffirmResources();
 
-                DrawCopyableTextField("Full Path", "bank:/" + bank.Name);
+                DrawCopyableTextField(L10n.Tr("Full Path"), "bank:/" + bank.Name);
 
                 string[] SizeSuffix = { "B", "KB", "MB", "GB" };
 
-                GUILayout.Label("Platform Bank Sizes", textFieldNameStyle);
+                GUILayout.Label(L10n.Tr("Platform Bank Sizes"), textFieldNameStyle);
 
                 EditorGUI.indentLevel++;
 
@@ -965,11 +968,11 @@ namespace FMODUnity
             {
                 AffirmResources();
 
-                DrawCopyableTextField("Name", parameter.Name);
+                DrawCopyableTextField(L10n.Tr("Name"), parameter.Name);
                 DrawCopyableTextField("ID",
                     string.Format("{{ data1 = 0x{0:x8}, data2 = 0x{1:x8} }}", parameter.ID.data1, parameter.ID.data2));
-                DrawTextField("Minimum", parameter.Min.ToString());
-                DrawTextField("Maximum", parameter.Max.ToString());
+                DrawTextField(L10n.Tr("Minimum"), parameter.Min.ToString());
+                DrawTextField(L10n.Tr("Maximum"), parameter.Max.ToString());
             }
 
             private void DrawCopyableTextField(string name, string value)
@@ -995,7 +998,7 @@ namespace FMODUnity
         }
 
         [Serializable]
-        class TransportControls
+        private class TransportControls
         {
             private Texture playOff;
             private Texture playOn;
@@ -1031,10 +1034,17 @@ namespace FMODUnity
             {
                 AffirmResources();
 
-                var previewState = EditorUtils.PreviewState;
-                bool playing = previewState == PreviewState.Playing;
-                bool paused = previewState == PreviewState.Paused;
-                bool stopped = previewState == PreviewState.Stopped;
+                FMOD.Studio.PLAYBACK_STATE previewState = FMOD.Studio.PLAYBACK_STATE.STOPPED;
+                bool paused = false;
+
+                if (PreviewEventInstance.isValid())
+                {
+                    PreviewEventInstance.getPlaybackState(out previewState);
+                    PreviewEventInstance.getPaused(out paused);
+                }
+
+                bool playing = previewState == FMOD.Studio.PLAYBACK_STATE.PLAYING;
+                bool stopped = previewState == FMOD.Studio.PLAYBACK_STATE.STOPPED;
 
                 EditorGUILayout.BeginHorizontal();
 
@@ -1044,27 +1054,33 @@ namespace FMODUnity
 
                     if (paused)
                     {
-                        EditorUtils.PreviewStop();
+                        EditorUtils.PreviewStop(PreviewEventInstance);
+                        PreviewEventInstance.release();
+                        PreviewEventInstance.clearHandle();
                     }
                     if (playing)
                     {
-                        EditorUtils.PreviewPause();
+                        EditorUtils.PreviewPause(PreviewEventInstance);
                     }
                 }
                 if (GUILayout.Button(playing ? playOn : playOff, buttonStyle, GUILayout.ExpandWidth(false)))
                 {
-                    if (playing || stopped)
+                    if (paused)
                     {
-                        EditorUtils.PreviewEvent(selectedEvent, parameterValues);
+                        EditorUtils.PreviewPause(PreviewEventInstance);
                     }
                     else
                     {
-                        EditorUtils.PreviewPause();
+                        if (PreviewEventInstance.isValid())
+                        {
+                            EditorUtils.PreviewStop(PreviewEventInstance);
+                        }
+                        PreviewEventInstance = EditorUtils.PreviewEvent(selectedEvent, parameterValues);
                     }
 
                     forceRepaint = true;
                 }
-                if (GUILayout.Button(new GUIContent(openIcon, "Show Event in FMOD Studio"), buttonStyle, GUILayout.ExpandWidth(false)))
+                if (GUILayout.Button(new GUIContent(openIcon, L10n.Tr("Show Event in FMOD Studio")), buttonStyle, GUILayout.ExpandWidth(false)))
                 {
                     string cmd = string.Format("studio.window.navigateTo(studio.project.lookup(\"{0}\"))", selectedEvent.Guid);
                     EditorUtils.SendScriptCommand(cmd);
@@ -1075,7 +1091,7 @@ namespace FMODUnity
         }
 
         [Serializable]
-        class Event3DPreview
+        private class Event3DPreview
         {
             private bool isDragging;
             private Rect arenaRect;
@@ -1121,7 +1137,7 @@ namespace FMODUnity
                 {
                     GUI.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
                 }
-                
+
                 GUILayout.Label(arena, GUILayout.ExpandWidth(false));
 
                 if (Event.current.type == EventType.Repaint)
@@ -1182,12 +1198,21 @@ namespace FMODUnity
                     }
                 }
 
-                EditorUtils.PreviewUpdatePosition(eventDistance, eventOrientation);
+                if (PreviewEventInstance.isValid())
+                {
+                    // Listener at origin
+                    FMOD.ATTRIBUTES_3D pos = new FMOD.ATTRIBUTES_3D();
+                    pos.position.x = (float)Math.Sin(eventOrientation) * eventDistance;
+                    pos.position.y = (float)Math.Cos(eventOrientation) * eventDistance;
+                    pos.forward.x = 1.0f;
+                    pos.up.z = 1.0f;
+                    PreviewEventInstance.set3DAttributes(pos);
+                }
             }
         }
 
         [Serializable]
-        class EventParameterControls
+        private class EventParameterControls
         {
             [NonSerialized]
             private Dictionary<string, float> parameterValues = new Dictionary<string, float>();
@@ -1221,7 +1246,7 @@ namespace FMODUnity
                 }
 
                 showGlobalParameters = selectedEvent.GlobalParameters.Count > 0 &&
-                    EditorGUI.Foldout(EditorGUILayout.GetControlRect(), showGlobalParameters, "Global Parameters");
+                    EditorGUI.Foldout(EditorGUILayout.GetControlRect(), showGlobalParameters, L10n.Tr("Global Parameters"));
 
                 foreach (EditorParamRef paramRef in selectedEvent.GlobalParameters)
                 {
@@ -1263,13 +1288,16 @@ namespace FMODUnity
                 }
                 else
                 {
-                    EditorUtils.PreviewUpdateParameter(paramRef.ID, parameterValues[paramRef.Name]);
+                    if (PreviewEventInstance.isValid())
+                    {
+                        PreviewEventInstance.setParameterByID(paramRef.ID, parameterValues[paramRef.Name]);
+                    }
                 }
             }
         }
 
         [Serializable]
-        class PreviewMeters
+        private class PreviewMeters
         {
             private Texture meterOn;
             private Texture meterOff;
@@ -1289,7 +1317,7 @@ namespace FMODUnity
 
                 int meterHeight = minimized ? 86 : 128;
                 int meterWidth = (int)((128 / (float)meterOff.height) * meterOff.width);
-                
+
                 List<float> meterPositions = meterPositionsForSpeakerMode(speakerModeForChannelCount(metering.Length), meterWidth, 2, 6);
 
                 const int MeterCountMaximum = 16;
@@ -1306,7 +1334,7 @@ namespace FMODUnity
                     Rect meterRect = new Rect(baseX + meterPositions[i], fullRect.y, meterWidth, fullRect.height);
 
                     GUI.DrawTexture(meterRect, meterOff);
-                    
+
                     float db = 20.0f * Mathf.Log10(metering[i] * Mathf.Sqrt(2.0f));
                     db = Mathf.Clamp(db, -80.0f, 10.0f);
                     float visible = 0;
@@ -1523,7 +1551,7 @@ namespace FMODUnity
         }
 
         [Flags]
-        enum TypeFilter
+        private enum TypeFilter
         {
             Event = 1,
             Bank = 2,
@@ -1535,7 +1563,7 @@ namespace FMODUnity
         {
             BeginInspectorPopup(property, TypeFilter.Event);
 
-            SerializedProperty pathProperty = property.FindPropertyRelative("Path");
+            SerializedProperty pathProperty = property.FindPropertyRelative(L10n.Tr("Path"));
 
             if (!string.IsNullOrEmpty(pathProperty.stringValue))
             {
@@ -1591,26 +1619,39 @@ namespace FMODUnity
             searchField = new SearchField();
             treeView = new TreeView(treeViewState);
 
-            ReadEventCache();
-
-            searchField.downOrUpArrowKeyPressed += treeView.SetFocus;
-
-            SceneView.duringSceneGui += SceneUpdate;
-
-            EditorApplication.hierarchyWindowItemOnGUI += HierarchyUpdate;
-
-            if (isStandaloneWindow)
+			// Delay accessing the event cache as this will cause an error if window is opened on Unity start up.
+            EditorApplication.delayCall += () =>
             {
-                EditorUtils.LoadPreviewBanks();
-            }
+                ReadEventCache();
 
-            IsOpen = true;
+                searchField.downOrUpArrowKeyPressed += treeView.SetFocus;
+
+                SceneView.duringSceneGui += SceneUpdate;
+
+                EditorApplication.hierarchyWindowItemOnGUI += HierarchyUpdate;
+
+                if (isStandaloneWindow)
+                {
+                    EditorUtils.LoadPreviewBanks();
+                }
+
+                IsOpen = true;
+                Repaint();
+            };
         }
 
         public void OnDestroy()
         {
-            EditorUtils.PreviewStop();
-            EditorUtils.UnloadPreviewBanks();
+            if (PreviewEventInstance.isValid())
+            {
+                EditorUtils.PreviewStop(PreviewEventInstance);
+                PreviewEventInstance.clearHandle();
+            }
+
+            if (isStandaloneWindow)
+            {
+                EditorUtils.UnloadPreviewBanks();
+            }
 
             IsOpen = false;
         }
@@ -1626,7 +1667,7 @@ namespace FMODUnity
         }
 
         // This is an event handler on the hierachy view to handle dragging our objects from the browser
-        void HierarchyUpdate(int instance, Rect rect)
+        private void HierarchyUpdate(int instance, Rect rect)
         {
             if (Event.current.type == EventType.DragPerform && rect.Contains(Event.current.mousePosition))
             {
@@ -1638,7 +1679,7 @@ namespace FMODUnity
 
                     if (data is EditorEventRef)
                     {
-                        Undo.SetCurrentGroupName("Add Studio Event Emitter");
+                        Undo.SetCurrentGroupName(L10n.Tr("Add Studio Event Emitter"));
 
                         StudioEventEmitter emitter = Undo.AddComponent<StudioEventEmitter>(target);
 
@@ -1648,7 +1689,7 @@ namespace FMODUnity
                     }
                     else if (data is EditorBankRef)
                     {
-                        Undo.SetCurrentGroupName("Add Studio Bank Loader");
+                        Undo.SetCurrentGroupName(L10n.Tr("Add Studio Bank Loader"));
 
                         StudioBankLoader loader = Undo.AddComponent<StudioBankLoader>(target);
                         loader.Banks = new List<string>();
@@ -1656,10 +1697,10 @@ namespace FMODUnity
                     }
                     else // data is EditorParamRef
                     {
-                        Undo.SetCurrentGroupName("Add Studio Global Parameter Trigger");
+                        Undo.SetCurrentGroupName(L10n.Tr("Add Studio Global Parameter Trigger"));
 
                         StudioGlobalParameterTrigger trigger = Undo.AddComponent<StudioGlobalParameterTrigger>(target);
-                        trigger.parameter = (data as EditorParamRef).Name;
+                        trigger.Parameter = (data as EditorParamRef).Name;
                     }
 
                     Selection.activeObject = target;
@@ -1671,7 +1712,7 @@ namespace FMODUnity
 
         // This is an event handler on the scene view to handle dragging our objects from the browser
         // and creating new gameobjects
-        void SceneUpdate(SceneView sceneView)
+        private void SceneUpdate(SceneView sceneView)
         {
             if (Event.current.type == EventType.DragPerform && IsDroppable(DragAndDrop.objectReferences))
             {
@@ -1691,7 +1732,7 @@ namespace FMODUnity
                     emitter.EventReference.Path = path;
                     emitter.EventReference.Guid = eventRef.Guid;
 
-                    Undo.RegisterCreatedObjectUndo(newObject, "Create Studio Event Emitter");
+                    Undo.RegisterCreatedObjectUndo(newObject, L10n.Tr("Create Studio Event Emitter"));
                 }
                 else if (data is EditorBankRef)
                 {
@@ -1701,7 +1742,7 @@ namespace FMODUnity
                     loader.Banks = new List<string>();
                     loader.Banks.Add((data as EditorBankRef).Name);
 
-                    Undo.RegisterCreatedObjectUndo(newObject, "Create Studio Bank Loader");
+                    Undo.RegisterCreatedObjectUndo(newObject, L10n.Tr("Create Studio Bank Loader"));
                 }
                 else // data is EditorParamRef
                 {
@@ -1710,9 +1751,9 @@ namespace FMODUnity
                     newObject = new GameObject(name + " Trigger");
 
                     StudioGlobalParameterTrigger trigger = newObject.AddComponent<StudioGlobalParameterTrigger>();
-                    trigger.parameter = name;
+                    trigger.Parameter = name;
 
-                    Undo.RegisterCreatedObjectUndo(newObject, "Create Studio Global Parameter Trigger");
+                    Undo.RegisterCreatedObjectUndo(newObject, L10n.Tr("Create Studio Global Parameter Trigger"));
                 }
 
                 Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
@@ -1734,7 +1775,7 @@ namespace FMODUnity
             {
                 DragAndDrop.visualMode = DragAndDropVisualMode.Move;
                 DragAndDrop.AcceptDrag();
-                Event.current.Use(); 
+                Event.current.Use();
             }
         }
     }
