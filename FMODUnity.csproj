@@ -103,7 +103,7 @@
     <None Include="Assets\Plugins\FMOD\platforms\uwp\lib\arm\fmod.dll" />
     <None Include="Assets\Plugins\FMOD\platforms\uwp\lib\x64\fmodstudioL.dll" />
     <None Include="Assets\Plugins\FMOD\platforms\uwp\lib\x64\fmodL.dll" />
-    <None Include="Assets\Plugins\FMOD\LICENSE.txt" />
+    <None Include="Assets\Plugins\FMOD\LICENSE.TXT" />
     <None Include="Assets\Plugins\FMOD\platforms\uwp\lib\arm\fmodL.dll" />
     <None Include="Assets\Plugins\FMOD\platforms\win\lib\x86\resonanceaudio.dll" />
     <None Include="Assets\Plugins\FMOD\platforms\uwp\lib\x86\fmodstudioL.dll" />
