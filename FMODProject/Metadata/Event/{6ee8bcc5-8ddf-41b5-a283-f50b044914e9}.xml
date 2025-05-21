@@ -92,11 +92,18 @@ Triggered: When scanning a cactus
 	</object>
 	<object class="MarkerTrack" id="{e2cf2011-4a7c-4e7b-82df-fb26c467e724}" />
 	<object class="GroupTrack" id="{7c533d07-a8f0-4ffb-9971-77c82df58d1e}">
+		<relationship name="modules">
+			<destination>{7f1c18e8-c188-4cb1-bfda-5358e5eff147}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{582cf277-07ea-4182-9600-99c705bf6e08}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{5847e705-02d2-46f0-857e-ad5e074f348f}" />
+	<object class="Timeline" id="{5847e705-02d2-46f0-857e-ad5e074f348f}">
+		<relationship name="modules">
+			<destination>{7f1c18e8-c188-4cb1-bfda-5358e5eff147}</destination>
+		</relationship>
+	</object>
 	<object class="ActionSheet" id="{50e9bf36-6726-43cc-a1e3-d355a9991c44}">
 		<relationship name="modules">
 			<destination>{17af1cc0-6f62-4443-97d4-8e39da99a1b1}</destination>
@@ -120,6 +127,14 @@ Triggered: When scanning a cactus
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c528f6ae-c65e-4539-a6ee-de47d23b3600}" />
+	<object class="SingleSound" id="{7f1c18e8-c188-4cb1-bfda-5358e5eff147}">
+		<property name="length">
+			<value>4.3653541666666671</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{a4615886-ba54-473d-aca4-3704d162fe5f}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{582cf277-07ea-4182-9600-99c705bf6e08}">
 		<property name="name">
 			<value>Audio 1</value>

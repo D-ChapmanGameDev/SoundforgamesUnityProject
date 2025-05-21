@@ -79,11 +79,18 @@ Triggered: When the droid fires its laser</value>
 	</object>
 	<object class="MarkerTrack" id="{f92b0aad-d4a3-4896-aaea-e447fb044443}" />
 	<object class="GroupTrack" id="{e5a470b9-0682-4fe9-afab-9b0258c2cb61}">
+		<relationship name="modules">
+			<destination>{964181fc-17dc-473d-ab02-629a0937b220}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{45e230e7-c724-4cbc-a181-e6da365850d2}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{88644c86-5e8a-4718-b91f-f1e721fd4d68}" />
+	<object class="Timeline" id="{88644c86-5e8a-4718-b91f-f1e721fd4d68}">
+		<relationship name="modules">
+			<destination>{964181fc-17dc-473d-ab02-629a0937b220}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{29b5ac59-8709-4e5b-8f12-5c7cf6d74bea}">
 		<relationship name="effectChain">
 			<destination>{f452db27-47da-42a4-adbf-2a7e84b82d2e}</destination>
@@ -101,6 +108,28 @@ Triggered: When the droid fires its laser</value>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{495d5bfe-2309-4438-9670-00aff7fabe0c}" />
+	<object class="MultiSound" id="{964181fc-17dc-473d-ab02-629a0937b220}">
+		<property name="length">
+			<value>6.5</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{e2057c14-6d9b-47e9-9e96-04e1cd391985}</destination>
+			<destination>{abd348c5-d84f-44f1-8c65-10c243ce3f6a}</destination>
+			<destination>{66e4d9bf-a346-4d31-8dfd-64996b806a18}</destination>
+			<destination>{5fc39021-b2a8-4007-adc2-e947d71e0456}</destination>
+			<destination>{2fc7f8fa-8a1f-495b-8fab-2c4cd5cba355}</destination>
+			<destination>{3cdf2d34-d11e-4b10-aae3-51f4a926e6d6}</destination>
+			<destination>{912b9bba-ee15-44ab-8e0c-0163722adca8}</destination>
+			<destination>{0d48b313-7e2a-4642-bd94-a744de671572}</destination>
+			<destination>{003ae613-e90c-43c1-ab81-37483f3ca68f}</destination>
+			<destination>{779d7ec7-49f6-4b28-819f-96e9e4ce8fb4}</destination>
+			<destination>{9d29d679-1b7d-42c6-932b-44c063cfa6cd}</destination>
+			<destination>{d7b7389b-8086-4c6b-8006-9d963bc52f75}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{45e230e7-c724-4cbc-a181-e6da365850d2}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -126,6 +155,66 @@ Triggered: When the droid fires its laser</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9ad842c3-172c-41ea-80a8-4bf11213356c}" />
+	<object class="SingleSound" id="{e2057c14-6d9b-47e9-9e96-04e1cd391985}">
+		<relationship name="audioFile">
+			<destination>{51b64d41-d9c4-4d59-90b7-be54c55920e3}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{abd348c5-d84f-44f1-8c65-10c243ce3f6a}">
+		<relationship name="audioFile">
+			<destination>{6dc8d96a-9fbd-4b5b-a718-8170a6d4a576}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{66e4d9bf-a346-4d31-8dfd-64996b806a18}">
+		<relationship name="audioFile">
+			<destination>{769174bf-5bc5-40ff-a33d-00b03018fcb4}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{5fc39021-b2a8-4007-adc2-e947d71e0456}">
+		<relationship name="audioFile">
+			<destination>{bec79db4-7c2a-47c3-88f0-1f4d8bc018f7}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{2fc7f8fa-8a1f-495b-8fab-2c4cd5cba355}">
+		<relationship name="audioFile">
+			<destination>{90b68fe8-2b4f-44b0-b879-dff939aebac5}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{3cdf2d34-d11e-4b10-aae3-51f4a926e6d6}">
+		<relationship name="audioFile">
+			<destination>{d00f3d4a-af0f-4831-9206-da72ffb89d3e}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{912b9bba-ee15-44ab-8e0c-0163722adca8}">
+		<relationship name="audioFile">
+			<destination>{c45b1c6f-63e0-494c-a311-e9970a0f1d86}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{0d48b313-7e2a-4642-bd94-a744de671572}">
+		<relationship name="audioFile">
+			<destination>{3689e838-d6c4-4593-a6aa-5164299a4202}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{003ae613-e90c-43c1-ab81-37483f3ca68f}">
+		<relationship name="audioFile">
+			<destination>{11d30c0c-7bc8-472c-bf87-d1453f8c7de1}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{779d7ec7-49f6-4b28-819f-96e9e4ce8fb4}">
+		<relationship name="audioFile">
+			<destination>{93e38a90-ffaa-4447-9ae8-9c2866f947ba}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{9d29d679-1b7d-42c6-932b-44c063cfa6cd}">
+		<relationship name="audioFile">
+			<destination>{a3e89dec-dab5-4ab7-8a31-19029bf91d29}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{d7b7389b-8086-4c6b-8006-9d963bc52f75}">
+		<relationship name="audioFile">
+			<destination>{146c9ec5-1e30-4190-ac62-bb3b28ff4866}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{59fbab38-3d79-483a-ac40-85bf15d49eaf}">
 		<relationship name="effects">
 			<destination>{510424e7-68df-4a52-ac41-2ccd2a5a7f25}</destination>

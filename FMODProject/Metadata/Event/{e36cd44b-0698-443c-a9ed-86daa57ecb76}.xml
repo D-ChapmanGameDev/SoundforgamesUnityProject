@@ -12,7 +12,7 @@ Triggered: Randomly every 15 - 20 seconds.</value>
 			<value>ChitChat</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0315ad32-2855-432c-8399-cc7b48807503}</destination>
@@ -79,12 +79,18 @@ Triggered: Randomly every 15 - 20 seconds.</value>
 	</object>
 	<object class="MarkerTrack" id="{b3ff1c01-3237-425d-92fa-da33c6b9ce6c}" />
 	<object class="GroupTrack" id="{05779b88-589d-4e86-9cec-f51dc52052e0}">
+		<relationship name="modules">
+			<destination>{59d112a7-b6fa-451c-9889-16684b8160f1}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{50e74163-f3a3-4103-8220-08950ce08cb5}</destination>
 		</relationship>
 	</object>
 	<object class="Timeline" id="{225e13e7-42da-47c8-ba5c-4fbc28a16a03}" />
 	<object class="ParameterProxy" id="{2a88c98b-e694-4351-b726-47f559d00dd8}">
+		<relationship name="modules">
+			<destination>{59d112a7-b6fa-451c-9889-16684b8160f1}</destination>
+		</relationship>
 		<relationship name="preset">
 			<destination>{96d6cd3d-ea4f-4baa-b368-2f1d98940b31}</destination>
 		</relationship>
@@ -106,6 +112,14 @@ Triggered: Randomly every 15 - 20 seconds.</value>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{418c4fc3-461a-4cac-9e78-135153cbfe7f}" />
+	<object class="SingleSound" id="{59d112a7-b6fa-451c-9889-16684b8160f1}">
+		<property name="length">
+			<value>5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{b4f48413-9e0d-43bd-a914-7a925d623940}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{50e74163-f3a3-4103-8220-08950ce08cb5}">
 		<property name="name">
 			<value>Audio 1</value>
