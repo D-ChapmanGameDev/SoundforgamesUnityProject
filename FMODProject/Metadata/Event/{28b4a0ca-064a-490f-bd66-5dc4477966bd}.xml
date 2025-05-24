@@ -116,7 +116,10 @@ Triggered: Upon getting to within a certain distance of the radiation zone</valu
 	<object class="MixerBusPanner" id="{ebc4f5c4-3898-464a-b435-c23b21ab23e9}" />
 	<object class="SingleSound" id="{2304cd84-93d6-4928-9c00-d242eec17b29}">
 		<property name="length">
-			<value>2</value>
+			<value>3.8999999999999999</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{ad55d215-affd-4008-93c6-ab3f6f9088e8}</destination>
