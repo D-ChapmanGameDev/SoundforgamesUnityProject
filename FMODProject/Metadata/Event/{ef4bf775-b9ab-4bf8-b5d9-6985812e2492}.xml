@@ -124,7 +124,7 @@ Triggered: If Player or Cactus are ignited by GoldWorm.</value>
 	<object class="MixerBusPanner" id="{4803abf2-44ec-4f4f-a32c-6b9e00f9d96e}" />
 	<object class="MultiSound" id="{2ba8f0a4-fa40-4342-8e07-f1d9882b352c}">
 		<property name="length">
-			<value>10</value>
+			<value>4.5</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>

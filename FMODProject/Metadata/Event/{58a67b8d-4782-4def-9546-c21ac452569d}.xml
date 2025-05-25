@@ -87,11 +87,18 @@ Triggered: When the Goldworm takes a certain number of laser hits</value>
 	</object>
 	<object class="MarkerTrack" id="{dd34375f-4564-4b82-a186-db4d6c788765}" />
 	<object class="GroupTrack" id="{4e55a8b7-968e-4e2e-9466-d2ba854f2fa5}">
+		<relationship name="modules">
+			<destination>{f2ae9261-f2e5-4064-8018-48dc14cc38a8}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{4bd2fc3f-e7ff-4260-afce-064cf6bbc90d}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{bd1a7e51-4991-4009-9f20-4de872be4500}" />
+	<object class="Timeline" id="{bd1a7e51-4991-4009-9f20-4de872be4500}">
+		<relationship name="modules">
+			<destination>{f2ae9261-f2e5-4064-8018-48dc14cc38a8}</destination>
+		</relationship>
+	</object>
 	<object class="ActionSheet" id="{4a3f4a55-2d67-4a2a-8710-af388f3e3575}">
 		<relationship name="modules">
 			<destination>{838e2813-e321-4157-8817-3aebdf14bdd2}</destination>
@@ -115,6 +122,14 @@ Triggered: When the Goldworm takes a certain number of laser hits</value>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6942d935-da3e-4025-8ae9-36623406b893}" />
+	<object class="SingleSound" id="{f2ae9261-f2e5-4064-8018-48dc14cc38a8}">
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{9c06c442-ed79-4946-a5ab-1c0edfca5eca}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{4bd2fc3f-e7ff-4260-afce-064cf6bbc90d}">
 		<property name="name">
 			<value>Audio 1</value>

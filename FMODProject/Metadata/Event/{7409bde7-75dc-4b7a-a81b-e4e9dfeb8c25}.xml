@@ -88,11 +88,18 @@ Triggered: When the Goldworm goes underground
 	</object>
 	<object class="MarkerTrack" id="{9269e26f-1349-4dd7-9381-718e38115802}" />
 	<object class="GroupTrack" id="{ad383260-8136-4be6-95fe-19cdbd9167b7}">
+		<relationship name="modules">
+			<destination>{cb17a561-3d14-4b6a-90a4-ae29a3faa02a}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{29c8b990-98cf-47d1-8e77-fefdea3b3f68}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{55687287-df90-458f-876f-3acf0dedf7dc}" />
+	<object class="Timeline" id="{55687287-df90-458f-876f-3acf0dedf7dc}">
+		<relationship name="modules">
+			<destination>{cb17a561-3d14-4b6a-90a4-ae29a3faa02a}</destination>
+		</relationship>
+	</object>
 	<object class="ActionSheet" id="{b6dd41ec-96a9-4a92-9e64-83f7e38b4e1e}">
 		<relationship name="modules">
 			<destination>{855901bf-db61-4768-89ff-72bc246d4b58}</destination>
@@ -116,6 +123,14 @@ Triggered: When the Goldworm goes underground
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ee228e6c-09d5-426e-9a89-66123e1ee911}" />
+	<object class="SingleSound" id="{cb17a561-3d14-4b6a-90a4-ae29a3faa02a}">
+		<property name="length">
+			<value>0.93077083333333333</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{a97783ef-a57a-4c15-90a2-37a8547a518e}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{29c8b990-98cf-47d1-8e77-fefdea3b3f68}">
 		<property name="name">
 			<value>Audio 1</value>
