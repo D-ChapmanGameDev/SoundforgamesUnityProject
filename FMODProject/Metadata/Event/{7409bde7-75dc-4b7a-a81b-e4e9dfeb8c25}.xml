@@ -125,7 +125,10 @@ Triggered: When the Goldworm goes underground
 	<object class="MixerBusPanner" id="{ee228e6c-09d5-426e-9a89-66123e1ee911}" />
 	<object class="SingleSound" id="{cb17a561-3d14-4b6a-90a4-ae29a3faa02a}">
 		<property name="length">
-			<value>0.14999999999999999</value>
+			<value>0.14799999999999999</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.014</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{a97783ef-a57a-4c15-90a2-37a8547a518e}</destination>

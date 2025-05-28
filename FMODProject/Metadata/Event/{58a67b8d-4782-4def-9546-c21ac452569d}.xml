@@ -124,7 +124,7 @@ Triggered: When the Goldworm takes a certain number of laser hits</value>
 	<object class="MixerBusPanner" id="{6942d935-da3e-4025-8ae9-36623406b893}" />
 	<object class="SingleSound" id="{f2ae9261-f2e5-4064-8018-48dc14cc38a8}">
 		<property name="length">
-			<value>0.12</value>
+			<value>0.124</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{9c06c442-ed79-4946-a5ab-1c0edfca5eca}</destination>
