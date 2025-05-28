@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{4b0dde82-2ad8-4a22-a2be-3297bba0a88c}">
+		<property name="note">
+			<value>https://freesound.org/people/Mrthenoronha/sounds/519630/?attribution=javascript%3Avoid%280%29%3B
+
+Open Treasure Chest 8 Bit.wav by Mrthenoronha -- https://freesound.org/s/519630/ -- License: Attribution NonCommercial 4.0</value>
+		</property>
 		<property name="assetPath">
 			<value>Cactus/cactus growing.wav</value>
 		</property>

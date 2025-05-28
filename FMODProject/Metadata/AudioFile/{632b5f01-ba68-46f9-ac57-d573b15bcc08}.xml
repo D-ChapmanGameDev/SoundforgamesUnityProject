@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{632b5f01-ba68-46f9-ac57-d573b15bcc08}">
+		<property name="note">
+			<value>https://freesound.org/people/Mastersoundboy2005/sounds/737270/
+
+Alien ant screaming by Mastersoundboy2005 -- https://freesound.org/s/737270/ -- License: Creative Commons 0</value>
+		</property>
 		<property name="assetPath">
 			<value>Ant/ant 1.wav</value>
 		</property>
