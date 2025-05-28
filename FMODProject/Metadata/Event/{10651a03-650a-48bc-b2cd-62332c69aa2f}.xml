@@ -129,7 +129,7 @@ Triggered: When Goldworm attacks.</value>
 	<object class="MixerBusPanner" id="{6de594b5-8e47-4c8f-a504-108c351e9b25}" />
 	<object class="SingleSound" id="{077fef4b-2010-4959-b517-c5a9e551b7ee}">
 		<property name="length">
-			<value>0.68941666666666668</value>
+			<value>0.23999999999999999</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{d062057c-5d7d-4b23-80e5-2f9c599adbf8}</destination>
@@ -137,7 +137,7 @@ Triggered: When Goldworm attacks.</value>
 	</object>
 	<object class="SingleSound" id="{754c0118-2ec3-4af7-ac09-8d9b9db84dc4}">
 		<property name="length">
-			<value>0.68941666666666668</value>
+			<value>0.23999999999999999</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{0d00ff91-537a-41da-ad6f-46d1797950a4}</destination>

@@ -124,7 +124,10 @@ Triggered: When the Goldworm surfaces</value>
 	<object class="MixerBusPanner" id="{70571c62-6784-4219-a19b-4c370248bb66}" />
 	<object class="SingleSound" id="{cf994f3d-ca6c-493d-b95f-927ad4444147}">
 		<property name="length">
-			<value>0.5</value>
+			<value>0.14000000000000001</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.082000000000000003</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{aa6f0f0f-e283-465f-84c9-4b7d2af9e514}</destination>

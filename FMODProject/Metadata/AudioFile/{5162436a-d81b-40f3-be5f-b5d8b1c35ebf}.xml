@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{5162436a-d81b-40f3-be5f-b5d8b1c35ebf}">
+		<property name="note">
+			<value>https://freesound.org/people/alec_havinmaa/sounds/417654/</value>
+		</property>
 		<property name="assetPath">
-			<value>tunneling 1.wav</value>
+			<value>Enemy/tunneling 1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

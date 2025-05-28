@@ -155,6 +155,7 @@ Triggered: On Start</value>
 	<object class="MixerBusEffectChain" id="{8f6decfc-6d8a-42c2-a8a7-4fc41f51e1b1}">
 		<relationship name="effects">
 			<destination>{8c67ac3b-def0-474c-ad6c-769af9ce3a21}</destination>
+			<destination>{ced7a52c-d66f-4e1f-bf6f-e59fa20dbd27}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b841ea01-69eb-4958-a2fd-662dde869a33}">
@@ -182,6 +183,14 @@ Triggered: On Start</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{8c67ac3b-def0-474c-ad6c-769af9ce3a21}" />
+	<object class="SpatialiserEffect" id="{ced7a52c-d66f-4e1f-bf6f-e59fa20dbd27}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>90</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{beffdde3-7ba6-4c88-8cad-11c2355b19ff}">
 		<property name="position">
 			<value>0</value>

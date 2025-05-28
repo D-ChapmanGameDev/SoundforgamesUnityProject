@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{8d26591e-7763-4e89-b0e5-28041d0c7cbc}">
+		<property name="note">
+			<value>Recorded in the foley room with Alex, Louis, Eli, Johnny, Ryan</value>
+		</property>
 		<property name="assetPath">
 			<value>Ambience/Water_Dripping_3.wav</value>
 		</property>

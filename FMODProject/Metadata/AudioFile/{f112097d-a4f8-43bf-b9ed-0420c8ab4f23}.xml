@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f112097d-a4f8-43bf-b9ed-0420c8ab4f23}">
+		<property name="note">
+			<value>https://freesound.org/people/crisstanza/sounds/167127/
+
+pause.mp3 by crisstanza -- https://freesound.org/s/167127/ -- License: Creative Commons 0</value>
+		</property>
 		<property name="assetPath">
 			<value>UI/pause game.wav</value>
 		</property>

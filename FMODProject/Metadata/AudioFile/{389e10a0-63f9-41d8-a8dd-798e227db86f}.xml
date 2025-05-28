@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{389e10a0-63f9-41d8-a8dd-798e227db86f}">
+		<property name="note">
+			<value>https://freesound.org/people/fstagi/sounds/404949/</value>
+		</property>
 		<property name="assetPath">
 			<value>Companion/Movement.wav</value>
 		</property>

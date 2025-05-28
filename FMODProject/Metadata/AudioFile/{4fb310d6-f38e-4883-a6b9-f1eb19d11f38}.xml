@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{4fb310d6-f38e-4883-a6b9-f1eb19d11f38}">
+		<property name="note">
+			<value>https://freesound.org/people/chungus43A/sounds/587620/</value>
+		</property>
 		<property name="assetPath">
 			<value>Procedural/Treescale.wav</value>
 		</property>

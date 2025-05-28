@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{cb8ece10-072e-4598-96e3-5f4dd9b43015}">
+		<property name="note">
+			<value>Recorded outside by a campfire with Alex, Louis, Eli, Jess, Jasper, and Kai</value>
+		</property>
 		<property name="assetPath">
-			<value>bunring 4.wav</value>
+			<value>Burning/bunring 4.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ad55d215-affd-4008-93c6-ab3f6f9088e8}">
+		<property name="note">
+			<value>https://freesound.org/people/PixelProphecy/sounds/531750/</value>
+		</property>
 		<property name="assetPath">
 			<value>Companion/alerted.wav</value>
 		</property>

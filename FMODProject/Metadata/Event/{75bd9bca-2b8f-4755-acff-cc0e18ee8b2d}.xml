@@ -13,7 +13,7 @@ Triggered: On Start</value>
 			<value>Rotation</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0315ad32-2855-432c-8399-cc7b48807503}</destination>
@@ -100,6 +100,9 @@ Triggered: On Start</value>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{da663cbf-4309-4fb8-938a-381795615231}">
+		<property name="pitch">
+			<value>-2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{6669af57-604d-4f7b-a33a-2e5728606807}</destination>
 		</relationship>
@@ -141,6 +144,7 @@ Triggered: On Start</value>
 	<object class="MixerBusEffectChain" id="{6669af57-604d-4f7b-a33a-2e5728606807}">
 		<relationship name="effects">
 			<destination>{6f6f1f25-5119-4a72-a545-937ba407cc35}</destination>
+			<destination>{75d09e52-85e6-4c5b-a854-0c37b2785c01}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3d9566c9-1ad8-4dbc-b5e8-97e6c82c5779}" />
@@ -152,5 +156,16 @@ Triggered: On Start</value>
 	</object>
 	<object class="MixerBusPanner" id="{52d11eb4-b610-46df-bca9-2cbac44897d3}" />
 	<object class="MixerBusFader" id="{6f6f1f25-5119-4a72-a545-937ba407cc35}" />
+	<object class="SpatialiserEffect" id="{75d09e52-85e6-4c5b-a854-0c37b2785c01}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>90</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{92d1c312-9243-4c47-806a-b691e2301c7a}" />
 </objects>

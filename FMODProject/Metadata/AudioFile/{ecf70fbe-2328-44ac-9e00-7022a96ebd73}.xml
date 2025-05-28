@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ecf70fbe-2328-44ac-9e00-7022a96ebd73}">
+		<property name="note">
+			<value>https://freesound.org/people/Robinhood76/sounds/350768/
+
+06762 hawaii game complete ding.wav by Robinhood76 -- https://freesound.org/s/350768/ -- License: Attribution NonCommercial 4.0</value>
+		</property>
 		<property name="assetPath">
 			<value>UI/Compendium updated.wav</value>
 		</property>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{da90db38-875c-475d-b86d-0313295206b9}">
+		<property name="note">
+			<value>https://freesound.org/people/digimistic/sounds/634876/
+
+Game Menu Select Sound by digimistic -- https://freesound.org/s/634876/ -- License: Creative Commons 0</value>
+		</property>
 		<property name="assetPath">
 			<value>UI/Menu select.wav</value>
 		</property>

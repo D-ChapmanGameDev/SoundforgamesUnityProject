@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{62a68133-cd0a-43be-bcb6-2e23195c1a5d}">
+		<property name="note">
+			<value>https://freesound.org/people/jobro/sounds/33786/
+
+4 beep c.wav by jobro -- https://freesound.org/s/33786/ -- License: Attribution 3.0</value>
+		</property>
 		<property name="assetPath">
-			<value>tool plant scan.wav</value>
+			<value>Companion/tool plant scan.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

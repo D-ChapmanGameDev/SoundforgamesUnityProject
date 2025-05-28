@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{5bb0114d-ee41-4f12-b373-98cd2c439fe3}">
 		<property name="assetPath">
-			<value>worm die.wav</value>
+			<value>Enemy/worm die.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

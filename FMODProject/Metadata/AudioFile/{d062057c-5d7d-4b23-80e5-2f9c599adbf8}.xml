@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d062057c-5d7d-4b23-80e5-2f9c599adbf8}">
+		<property name="note">
+			<value>https://freesound.org/people/J8054/sounds/648747/
+
+</value>
+		</property>
 		<property name="assetPath">
-			<value>worm fire 1.wav</value>
+			<value>Enemy/worm fire 1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

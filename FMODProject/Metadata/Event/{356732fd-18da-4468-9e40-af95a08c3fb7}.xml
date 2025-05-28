@@ -103,6 +103,9 @@ Triggered: When the droid fires a seed</value>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{36d9a23b-6342-4430-be3b-62ff9cf4a9e2}">
+		<property name="pitch">
+			<value>-10.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{54d377bb-9c43-46b5-85d1-eb8f224c93cc}</destination>
 		</relationship>
@@ -153,6 +156,7 @@ Triggered: When the droid fires a seed</value>
 	<object class="MixerBusEffectChain" id="{54d377bb-9c43-46b5-85d1-eb8f224c93cc}">
 		<relationship name="effects">
 			<destination>{94ffc39a-a42f-424b-944a-65d6f28bc0bc}</destination>
+			<destination>{1af9c4bb-8f3e-4f8d-9282-eef8aa8667a1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fce753f2-c935-46fc-a04a-0321a0892897}">
@@ -183,5 +187,10 @@ Triggered: When the droid fires a seed</value>
 	</object>
 	<object class="MixerBusPanner" id="{aadcef2f-0340-4ecb-a322-a4aa0d854094}" />
 	<object class="MixerBusFader" id="{94ffc39a-a42f-424b-944a-65d6f28bc0bc}" />
+	<object class="SpatialiserEffect" id="{1af9c4bb-8f3e-4f8d-9282-eef8aa8667a1}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{4e985772-7ea7-4ba7-9a5e-289c3b3a72df}" />
 </objects>

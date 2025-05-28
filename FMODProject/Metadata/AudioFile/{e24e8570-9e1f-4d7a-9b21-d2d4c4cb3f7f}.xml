@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e24e8570-9e1f-4d7a-9b21-d2d4c4cb3f7f}">
+		<property name="note">
+			<value>Recorded in the foley room with Alex, Louis, Eli, Johnny, Ryan</value>
+		</property>
 		<property name="assetPath">
-			<value>metal proj 5.wav</value>
+			<value>Projectiles/metal proj 5.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

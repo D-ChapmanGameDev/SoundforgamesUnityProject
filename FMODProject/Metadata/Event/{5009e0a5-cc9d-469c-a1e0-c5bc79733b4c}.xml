@@ -12,7 +12,7 @@ Triggered: if the ants velocity exceeds 2 (if the player runs into them etc).</v
 			<value>Ant</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0fc016a5-8380-4eec-bfd5-e89d1d317145}</destination>
@@ -79,9 +79,11 @@ Triggered: if the ants velocity exceeds 2 (if the player runs into them etc).</v
 	</object>
 	<object class="MarkerTrack" id="{bbf75699-cc0f-4b13-84f2-8574f64b74d9}" />
 	<object class="GroupTrack" id="{4fc0a554-16db-41f2-b4cc-9cac3e2e8369}">
+		<relationship name="automationTracks">
+			<destination>{1978ef6c-cda1-465a-bbc0-539f7a29634d}</destination>
+		</relationship>
 		<relationship name="modules">
-			<destination>{62608815-e35e-441f-91c5-edcdd6408184}</destination>
-			<destination>{12e2c7f9-ba39-4bc0-bd5c-5340f51e7462}</destination>
+			<destination>{f26c0efb-5132-494b-8013-a3bcfca443c0}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{18bae859-0825-4943-bc07-f0615c6d30bf}</destination>
@@ -89,11 +91,13 @@ Triggered: if the ants velocity exceeds 2 (if the player runs into them etc).</v
 	</object>
 	<object class="Timeline" id="{272c70e4-8d0a-42b5-8edc-9cafb76ecbb9}">
 		<relationship name="modules">
-			<destination>{62608815-e35e-441f-91c5-edcdd6408184}</destination>
-			<destination>{12e2c7f9-ba39-4bc0-bd5c-5340f51e7462}</destination>
+			<destination>{f26c0efb-5132-494b-8013-a3bcfca443c0}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0bcf7e6c-7830-429a-bed8-6e394b6967b4}">
+		<property name="pitch">
+			<value>-3.60000014</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{634a4dec-64a1-462b-bbc2-1d5f04a94752}</destination>
 		</relationship>
@@ -110,32 +114,30 @@ Triggered: if the ants velocity exceeds 2 (if the player runs into them etc).</v
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ba674e75-08c5-4197-b304-8b38617d0e14}" />
-	<object class="SingleSound" id="{62608815-e35e-441f-91c5-edcdd6408184}">
+	<object class="AutomationTrack" id="{1978ef6c-cda1-465a-bbc0-539f7a29634d}">
+		<relationship name="automator">
+			<destination>{7c68cdf1-c1ed-4581-8d66-14def2c925f3}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{f26c0efb-5132-494b-8013-a3bcfca443c0}">
 		<property name="length">
 			<value>2.3879166666666665</value>
 		</property>
-		<relationship name="fadeOutCurve">
-			<destination>{67244ab9-e27e-4fbd-9933-877a02f3c103}</destination>
-		</relationship>
-		<relationship name="audioFile">
-			<destination>{632b5f01-ba68-46f9-ac57-d573b15bcc08}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{12e2c7f9-ba39-4bc0-bd5c-5340f51e7462}">
-		<property name="start">
+		<property name="playlistMode">
 			<value>1</value>
 		</property>
-		<property name="length">
-			<value>1.9929375</value>
-		</property>
-		<relationship name="fadeInCurve">
-			<destination>{dfa410ac-3786-4232-ab02-7f2e029dfc91}</destination>
+		<relationship name="automators">
+			<destination>{7c68cdf1-c1ed-4581-8d66-14def2c925f3}</destination>
 		</relationship>
-		<relationship name="audioFile">
-			<destination>{ff858902-1c45-4b9d-8784-fc101ec84dee}</destination>
+		<relationship name="sounds">
+			<destination>{b60ce0ce-9b5c-4430-a748-d9c4fc4b0b87}</destination>
+			<destination>{439cb5e4-8c87-481d-9b0b-ae905d3a8dca}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{18bae859-0825-4943-bc07-f0615c6d30bf}">
+		<property name="volume">
+			<value>-28</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -152,30 +154,27 @@ Triggered: if the ants velocity exceeds 2 (if the player runs into them etc).</v
 	<object class="MixerBusEffectChain" id="{634a4dec-64a1-462b-bbc2-1d5f04a94752}">
 		<relationship name="effects">
 			<destination>{65d96ddf-b1d7-4248-b4ea-e371bb6d8570}</destination>
+			<destination>{94a7987f-c968-4aae-981b-f9f60d57d361}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d494ccd0-d4ce-409d-879e-0c2cd6743ff7}" />
 	<object class="MixerBusFader" id="{0a5b3946-ed56-4d66-8a38-0b109247c0fa}" />
-	<object class="FadeCurve" id="{67244ab9-e27e-4fbd-9933-877a02f3c103}">
-		<relationship name="startPoint">
-			<destination>{5d983443-c747-4eb1-beba-fd88e57aa19c}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{54d17785-df74-4492-9a60-090eb6049d9b}</destination>
-		</relationship>
-		<relationship name="relatedModule">
-			<destination>{12e2c7f9-ba39-4bc0-bd5c-5340f51e7462}</destination>
+	<object class="Automator" id="{7c68cdf1-c1ed-4581-8d66-14def2c925f3}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>volume</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{cd4bb48f-4df1-4022-b69b-a560599f2e7c}</destination>
 		</relationship>
 	</object>
-	<object class="FadeCurve" id="{dfa410ac-3786-4232-ab02-7f2e029dfc91}">
-		<relationship name="startPoint">
-			<destination>{00f6ceeb-297f-4df1-92fc-33f09c2ec2aa}</destination>
+	<object class="SingleSound" id="{b60ce0ce-9b5c-4430-a748-d9c4fc4b0b87}">
+		<relationship name="audioFile">
+			<destination>{632b5f01-ba68-46f9-ac57-d573b15bcc08}</destination>
 		</relationship>
-		<relationship name="endPoint">
-			<destination>{01361fc5-53a4-488f-a3b8-8d0bcfd8e0a4}</destination>
-		</relationship>
-		<relationship name="relatedModule">
-			<destination>{62608815-e35e-441f-91c5-edcdd6408184}</destination>
+	</object>
+	<object class="SingleSound" id="{439cb5e4-8c87-481d-9b0b-ae905d3a8dca}">
+		<relationship name="audioFile">
+			<destination>{ff858902-1c45-4b9d-8784-fc101ec84dee}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{7d44f086-d810-4638-bc1d-443158788e6f}">
@@ -185,43 +184,41 @@ Triggered: if the ants velocity exceeds 2 (if the player runs into them etc).</v
 	</object>
 	<object class="MixerBusPanner" id="{1765fab4-04f3-441e-aef3-bceb7ec3c219}" />
 	<object class="MixerBusFader" id="{65d96ddf-b1d7-4248-b4ea-e371bb6d8570}" />
-	<object class="AutomationPoint" id="{5d983443-c747-4eb1-beba-fd88e57aa19c}">
-		<property name="position">
-			<value>1</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-		<property name="curveShape">
-			<value>0.25471893</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{54d17785-df74-4492-9a60-090eb6049d9b}">
-		<property name="position">
-			<value>2.3879166666666665</value>
-		</property>
-		<property name="value">
+	<object class="SpatialiserEffect" id="{94a7987f-c968-4aae-981b-f9f60d57d361}">
+		<property name="minimumDistance">
 			<value>0</value>
 		</property>
-	</object>
-	<object class="AutomationPoint" id="{00f6ceeb-297f-4df1-92fc-33f09c2ec2aa}">
-		<property name="position">
-			<value>1</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.2547189</value>
+		<property name="maximumDistance">
+			<value>10</value>
 		</property>
 	</object>
-	<object class="AutomationPoint" id="{01361fc5-53a4-488f-a3b8-8d0bcfd8e0a4}">
-		<property name="position">
-			<value>2.3879166666666665</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
+	<object class="AutomationCurve" id="{cd4bb48f-4df1-4022-b69b-a560599f2e7c}">
+		<relationship name="parameter">
+			<destination>{272c70e4-8d0a-42b5-8edc-9cafb76ecbb9}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{bec4ad70-6bcd-43b0-a7e4-64d8314e337c}</destination>
+			<destination>{bc7f585c-e8b3-4df1-b350-4ee6818e91dc}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{0d2ef557-716e-4c81-a870-ba2bbc237a1a}" />
+	<object class="AutomationPoint" id="{bec4ad70-6bcd-43b0-a7e4-64d8314e337c}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-65</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.597868264</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{bc7f585c-e8b3-4df1-b350-4ee6818e91dc}">
+		<property name="position">
+			<value>2.4000000000000004</value>
+		</property>
+		<property name="value">
+			<value>2</value>
+		</property>
+	</object>
 </objects>

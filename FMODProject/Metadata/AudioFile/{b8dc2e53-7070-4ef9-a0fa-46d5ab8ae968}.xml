@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{b8dc2e53-7070-4ef9-a0fa-46d5ab8ae968}">
+		<property name="note">
+			<value>https://freesound.org/people/SergeQuadrado/sounds/786269/
+
+Indie Game Soundtrack by SergeQuadrado -- https://freesound.org/s/786269/ -- License: Attribution NonCommercial 4.0</value>
+		</property>
 		<property name="assetPath">
 			<value>Music/ingame soundtrack.wav</value>
 		</property>

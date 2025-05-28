@@ -92,6 +92,9 @@ Triggered: When the droid fires its laser</value>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{29b5ac59-8709-4e5b-8f12-5c7cf6d74bea}">
+		<property name="pitch">
+			<value>-2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{f452db27-47da-42a4-adbf-2a7e84b82d2e}</destination>
 		</relationship>
@@ -147,6 +150,7 @@ Triggered: When the droid fires its laser</value>
 	<object class="MixerBusEffectChain" id="{f452db27-47da-42a4-adbf-2a7e84b82d2e}">
 		<relationship name="effects">
 			<destination>{d1f0de7d-d8b0-495e-ae36-306fdc080ba3}</destination>
+			<destination>{13913079-3c66-48f2-8cf2-4daa72207ba6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c5967ebe-9d63-4200-9158-e79a6cb3b070}">
@@ -222,5 +226,13 @@ Triggered: When the droid fires its laser</value>
 	</object>
 	<object class="MixerBusPanner" id="{6bd0dd51-f00a-49ea-a8e5-8117389c6503}" />
 	<object class="MixerBusFader" id="{d1f0de7d-d8b0-495e-ae36-306fdc080ba3}" />
+	<object class="SpatialiserEffect" id="{13913079-3c66-48f2-8cf2-4daa72207ba6}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="maximumDistance">
+			<value>80</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{510424e7-68df-4a52-ac41-2ccd2a5a7f25}" />
 </objects>

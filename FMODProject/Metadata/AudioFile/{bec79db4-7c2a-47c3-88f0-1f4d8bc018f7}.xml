@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{bec79db4-7c2a-47c3-88f0-1f4d8bc018f7}">
+		<property name="note">
+			<value>https://freesound.org/people/Sheyvan/sounds/703452/</value>
+		</property>
 		<property name="assetPath">
 			<value>Companion/Laser 4.wav</value>
 		</property>

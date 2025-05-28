@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{2f2d9bd4-4618-422b-8aa6-52eb7c232535}">
+		<property name="note">
+			<value>https://freesound.org/people/MackinMeat/sounds/454583/</value>
+		</property>
 		<property name="assetPath">
 			<value>Companion/PewPew3.wav</value>
 		</property>

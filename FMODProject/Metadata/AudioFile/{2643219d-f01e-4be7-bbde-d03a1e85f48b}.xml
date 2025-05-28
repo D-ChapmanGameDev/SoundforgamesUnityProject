@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{2643219d-f01e-4be7-bbde-d03a1e85f48b}">
+		<property name="note">
+			<value>https://freesound.org/people/BaggoNotes/sounds/721512/
+
+PauseMenu_Appear by BaggoNotes -- https://freesound.org/s/721512/ -- License: Creative Commons 0</value>
+		</property>
 		<property name="assetPath">
 			<value>UI/Pause menu.wav</value>
 		</property>

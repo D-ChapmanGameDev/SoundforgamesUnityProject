@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{7b09d294-0542-46d5-bea3-0d8ec7341f4f}">
+		<property name="note">
+			<value>https://freesound.org/people/broumbroum/sounds/50555/
+
+sf3-sfx-menu-back-L.wav by broumbroum -- https://freesound.org/s/50555/ -- License: Attribution 3.0</value>
+		</property>
 		<property name="assetPath">
 			<value>UI/Menu back.wav</value>
 		</property>

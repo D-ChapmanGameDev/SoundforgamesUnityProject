@@ -118,7 +118,7 @@ Triggered: When the Goldworm has taken a certain amount of damage</value>
 	<object class="MixerBusPanner" id="{158e5c6c-8f21-4704-a6e4-d98475e7233e}" />
 	<object class="SingleSound" id="{b0029bbb-97f6-49fc-9de3-db00adc1da3b}">
 		<property name="length">
-			<value>1.5446041666666666</value>
+			<value>0.46000000000000002</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{5bb0114d-ee41-4f12-b373-98cd2c439fe3}</destination>

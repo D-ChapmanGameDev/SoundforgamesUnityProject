@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="EncodableAsset" id="{272d561f-a3c4-4c01-9d44-16a724babc48}">
+		<property name="note">
+			<value>Recorded outside by a campfire with Alex, Louis, Eli, Jess, Jasper, and Kai</value>
+		</property>
 		<property name="assetPath">
 			<value>Burning/</value>
 		</property>

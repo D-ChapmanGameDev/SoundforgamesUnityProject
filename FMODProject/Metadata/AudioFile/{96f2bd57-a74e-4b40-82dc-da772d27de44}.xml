@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{96f2bd57-a74e-4b40-82dc-da772d27de44}">
+		<property name="note">
+			<value>https://freesound.org/people/Freezeman/sounds/153211/
+
+beep3.wav by Freezeman -- https://freesound.org/s/153211/ -- License: Attribution 3.0</value>
+		</property>
 		<property name="assetPath">
-			<value>laser tool.wav</value>
+			<value>Companion/laser tool.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

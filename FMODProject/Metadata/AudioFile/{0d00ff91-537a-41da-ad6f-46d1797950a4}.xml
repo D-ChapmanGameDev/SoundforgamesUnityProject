@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{0d00ff91-537a-41da-ad6f-46d1797950a4}">
+		<property name="note">
+			<value>https://freesound.org/people/Erokia/sounds/427396/
+
+Plasma - Lazer Pistol Gun Shot 1 by Erokia -- https://freesound.org/s/427396/ -- License: Attribution 4.0</value>
+		</property>
 		<property name="assetPath">
-			<value>worm fire 2.wav</value>
+			<value>Enemy/worm fire 2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

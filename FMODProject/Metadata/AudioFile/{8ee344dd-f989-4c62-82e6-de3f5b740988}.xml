@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{8ee344dd-f989-4c62-82e6-de3f5b740988}">
+		<property name="note">
+			<value>https://freesound.org/people/saha213131/sounds/741263/
+
+pick up sound by saha213131 -- https://freesound.org/s/741263/ -- License: Creative Commons 0</value>
+		</property>
 		<property name="assetPath">
 			<value>UI/pickup sound.wav</value>
 		</property>
