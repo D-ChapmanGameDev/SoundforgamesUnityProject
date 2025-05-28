@@ -431,7 +431,7 @@ Triggered: On Start</value>
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-6</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{deff709a-5d48-4603-9042-73d71c2471ed}">
@@ -439,7 +439,7 @@ Triggered: On Start</value>
 			<value>4.6896551724137936</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>-5.99999619</value>
 		</property>
 		<property name="curveShape">
 			<value>0.442069978</value>
@@ -469,7 +469,7 @@ Triggered: On Start</value>
 			<value>23.980295566502463</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-6</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b2d4e475-cb8c-47b5-972c-e586ccc36591}">
@@ -493,7 +493,7 @@ Triggered: On Start</value>
 			<value>7.6000000000000005</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-13</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{7158e17e-b0ee-4c2f-9dba-428da25d3f7c}">
@@ -501,7 +501,7 @@ Triggered: On Start</value>
 			<value>11.054187192118226</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-13</value>
 		</property>
 		<property name="curveShape">
 			<value>0.442069978</value>
@@ -539,7 +539,7 @@ Triggered: On Start</value>
 			<value>12</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-9.00000095</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{95da95ca-87e7-455d-b6d0-bd0158505622}">
@@ -547,7 +547,7 @@ Triggered: On Start</value>
 			<value>16.610837438423644</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>-8.99999714</value>
 		</property>
 		<property name="curveShape">
 			<value>0.564591885</value>
@@ -585,7 +585,7 @@ Triggered: On Start</value>
 			<value>17.458128078817733</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-7.50000191</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{267c32ea-a192-445b-894c-5dff2584affb}">
@@ -593,7 +593,7 @@ Triggered: On Start</value>
 			<value>22.581280788177342</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>-7.49999809</value>
 		</property>
 		<property name="curveShape">
 			<value>0.746984303</value>
